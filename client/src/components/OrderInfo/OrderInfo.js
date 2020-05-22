@@ -20,8 +20,6 @@ const OrderInfo = () => {
       fetch(`/history/${confirmId}`)
         .then((data) => data.json())
         .then((data) => {
-          console.log('data.confirmation (confirmId)', data.confirmation);
-          console.log('data.order ', data.order);
           setOrderInfo(data.order);
           dispatch(clearPurchase());
         })

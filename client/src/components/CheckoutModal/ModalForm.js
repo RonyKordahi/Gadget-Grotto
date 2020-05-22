@@ -50,7 +50,6 @@ const ModalForm = ({ cartItems, total }) => {
       },
       'total': total,
     }
-    // console.log('order object ', order);
     fetch('/purchase', {
       method: 'POST',
       headers: {
@@ -61,9 +60,7 @@ const ModalForm = ({ cartItems, total }) => {
     })
     .then(res => res.json())
     .then(res => {
-      console.log('order id & success reply ', res.confirmation, res.status);
       if (res.status === 200) {
-        // console.log('purchase success');
         let confirmId = res.confirmation
         //redirects page to order confirmation page
         window.location.href = `/order-confirm/${confirmId}`;

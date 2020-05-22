@@ -44,7 +44,6 @@ const CartItem = ({ id, name, price, quantity, stock, imageSrc }) => {
                 //stops increasing beyond stock levels (Maxspan appears when at max)
                 if (amount < stock) {
                   amount++;
-                  console.log(amount);
                   dispatch(setQty(id, amount));
                 }
               }}

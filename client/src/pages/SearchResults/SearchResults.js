@@ -16,7 +16,6 @@ const SearchResults = () => {
     fetch(`/products/search/${searchTerm}`)
       .then((res) => res.json())
       .then((res) => {
-        console.log(res);
         setReturnValues(res);
       });
   }, [searchTerm]);

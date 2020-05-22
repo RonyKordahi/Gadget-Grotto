@@ -54,7 +54,6 @@ export default function cartItemsReducer(state = initialState, action) {
     }
     ///statuses
     case 'START-PURCHASE-PROCESS': {
-      console.log('start');
       return {
         ...state,
         status: 'start-purchase',

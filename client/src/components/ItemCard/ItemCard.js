@@ -30,8 +30,6 @@ const ItemCard = ({ product }) => {
     }
   }
 
-  // styled components:
-
   return (
     <Wrapper
       onClick={() => dispatch(setProductDetailsFromCard(product))}

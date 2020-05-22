@@ -7,7 +7,6 @@ import {
 } from '../../../actions';
 
 function FetchItemDetails(productId) {
-  console.log('fetch');
   const dispatch = useDispatch();
 
   // On initial load, we'll bring in the featured and sale items...

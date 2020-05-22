@@ -11,7 +11,6 @@ const OrderSearch = () => {
   //function just redirects to OrderInfo page with new url params
   const submitHandle = (ev) => {
     ev.preventDefault();
-    console.log('submit ', orderNum);
     history.push(`/order-confirm/${orderNum}`);
   };
 

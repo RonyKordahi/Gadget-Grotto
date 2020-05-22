@@ -46,7 +46,6 @@ export default function filterReducer(state = initialState, action) {
         if(priceFilter.length) {
           let newPricedItems = initialItems.filter((item) => {
             let numPrice = parseFloat(item.price.replace(/[^\d.]/g, ''));
-            // console.log('pf ', priceFilter);
             return (
             ( ( priceFilter.includes('$0 - $25') ) ? ( 0 < numPrice && numPrice <= 20 ): false)  ||
             ( ( priceFilter.includes('$25 - $50') ) ? ( 20 < numPrice && numPrice <= 50 ): false)  ||
@@ -54,7 +53,6 @@ export default function filterReducer(state = initialState, action) {
             ( ( priceFilter.includes('$100 and up') ) ? ( 100 < numPrice ): false)  
             )
           });
-          // console.log(newpricedItems);
           return newPricedItems;
           
         } else { return initialItems}
@@ -88,7 +86,6 @@ export default function filterReducer(state = initialState, action) {
       return state;
     }
     case 'SORT_ITEMS': {
-      // console.log('action ',  JSON.parse(action.sortVar) );
       //value passed is stringified object {type: '.', elv: '.'}, must parse to use.
       const variable = JSON.parse(action.sortVar);
       
@@ -97,7 +94,6 @@ export default function filterReducer(state = initialState, action) {
       || state.displayItems === null) {
         return {...state, sortOption: variable }
       };
-      // console.log('aaaaaa ',state.displayItems);
       let sortedItems = [...state.displayItems];
       if (variable.type === 'price') 
         sortedItems = sortedItems.sort((a, b) => {
